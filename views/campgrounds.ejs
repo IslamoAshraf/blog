@@ -1,0 +1,28 @@
+<%- include ("partials/header") %>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome To The Camp</h1>
+        <p class="lead">View our campgrounds</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <a class="btn btn-primary btn-lg" href="/campgrounds/new" role="button">Add New Camp</a>
+    </div>
+
+    <div class="row" style="display: flex; flex-wrap: wrap;">
+        <% campgrounds.forEach(campgrounds => { %>
+        <div class="col-md-4 col-sm-6">
+            <div class="card" style="margin-bottom: 10px;">
+                <img src="<%= campgrounds.image %>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text"><%= campgrounds.name %></p>
+                    <a href="/campgrounds/<%= campgrounds._id %> " class="btn btn-primary">More Info</a>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+</div>
+
+<%- include ("partials/footer") %>

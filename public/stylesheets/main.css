@@ -1,0 +1,14 @@
+.thumbnail {
+  width: 100%;
+  padding: 0px;
+  margin-bottom: 5px;
+}
+img {
+  width: 100%;
+}
+.caption-full {
+  padding: 10px;
+}
+#delete-btn{
+  display: inline;
+}

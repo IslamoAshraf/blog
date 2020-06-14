@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yelp</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+
+<body>
+    <nav class="navbar bg-light navbar-light navbar-expand-md">
+        <div class="container-fluid"><a class="navbar-brand" href="/campgrounds">Camp</a><button data-toggle="collapse"
+                data-target="#navcol-1" class="navbar-toggler"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-end" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <% if (!currentUser) { %>
+                    <li role="presentation" class="nav-item"><a class="nav-link active" href="/login">Log In</a></li>
+                    <li role="presentation" class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                    <% } else { %>
+                    <li role="presentation" class="nav-item"><a class="nav-link" href="/">Signed in
+                            as <%= currentUser.username %> </a></li>
+                    <li role="presentation" class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <% if (success && success.length) { %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+
+        <% if (error && error.length) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+
+    </div>
