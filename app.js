@@ -62,6 +62,4 @@ function isLoggedIn(req, res, next) {
 
 
 
-app.listen(3000, function () {
-    console.log("Started");
-});
+app.listen(process.env.PORT, process.env.IP);
