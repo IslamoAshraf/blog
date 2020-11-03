@@ -9,6 +9,10 @@ img {
 .caption-full {
   padding: 10px;
 }
-#delete-btn{
+#delete-btn {
   display: inline;
+}
+.card-img-top {
+  width: 400px;
+  justify-content: center;
 }

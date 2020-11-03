@@ -62,4 +62,8 @@ function isLoggedIn(req, res, next) {
 
 
 
-app.listen(process.env.PORT, process.env.IP);
+const PORT = 3000 || process.env.PORT
+
+app.listen(PORT, () => {
+    console.log(`app is listening to PORT ${PORT}`)
+})
